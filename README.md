@@ -1,11 +1,28 @@
-# Ubuntu 26.04 LTS WebServer (Nginx) 構築プロジェクト
+# VirtualBoxを用いたLinuxサーバ構築およびWebサーバ運用検証
 
-仮想環境（VirtualBox）上にLinuxサーバーを構築し、Webサーバー（Nginx）の導入とホストOSからのアクセス検証を行いました。
+① 要件定義
+Linux上にWebサーバを構築し、ホストOSからアクセス可能な環境を作成する
+サーバ状態を確認する簡易監視機能を実装する
 
-## 構成環境
-- **ホストOS**: Windows
-- **ゲストOS**: Ubuntu Server 26.04 LTS (VirtualBox)
-- **Webサーバー**: Nginx
+② 設計
+VirtualBox上にUbuntu Serverを構築
+Webサーバ：Nginx
+監視：Python（shutil）
+自動実行：cron（任意）
+
+③ 構築
+Ubuntu Serverインストール
+Nginxインストールおよび起動確認
+Pythonスクリプト作成（disk_check.py）
+④ テスト
+Nginx起動確認（systemctl status nginx）
+ブラウザアクセス確認
+ディスク情報取得確認
+
+⑤ 成果物
+Webサーバ公開画面（スクショ）
+Nginx稼働状態（スクショ）
+Python監視スクリプト
 
 ## 実施内容
 1. SSHによるリモート接続環境の開通（IP: 192.168.11.10）
